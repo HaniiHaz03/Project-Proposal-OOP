@@ -41,7 +41,7 @@ public class Stylist {
     }
 
     public void setName(String stylistName) {
-        this.stylistName = stylistName;
+        
     }
 
     // Method to get hourly rate and set hourly rate
@@ -50,7 +50,7 @@ public class Stylist {
     }
 
     public void setHourlyRate(double hourlyRate) {
-        this.hourlyRate = hourlyRate;
+        
     }
 
     // Method to get list of reservationsn and to set list of reservations
@@ -59,7 +59,7 @@ public class Stylist {
     }
 
     public void setReservations(List<Reservation> reservations) {
-        this.reservations = reservations;
+        
     }
     
     // To display the stylist detail
