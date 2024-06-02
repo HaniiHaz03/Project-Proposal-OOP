@@ -6,6 +6,21 @@
 import java.util.List; // library for list and array list
 import java.util.ArrayList;
 
+public class Main
+{
+	public static void main(String[] args) {
+		
+		Stylist stylist1 = new Stylist("Ally", 45.0);
+		Stylist stylist2 = new Stylist("Suzanne", 67.0);
+		
+		stylist1.getReservations().add(reservation1);
+        stylist1.getReservations().add(reservation2);
+		stylist1.displayStylistInfo();
+		stylist2.displayStylistInfo();
+		
+	}
+}
+
 public class Stylist {
     //declare variable stylist name, hourly rate and list of reservations
     private String stylistName;
