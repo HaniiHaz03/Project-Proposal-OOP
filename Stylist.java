@@ -14,7 +14,7 @@ public class Main
 		Stylist stylist2 = new Stylist("Suzanne", 67.0);
 		
 		stylist1.getReservations().add(reservation1);
-        stylist1.getReservations().add(reservation2);
+                stylist1.getReservations().add(reservation2);
 		stylist1.displayStylistInfo();
 		stylist2.displayStylistInfo();
 		
