@@ -15,7 +15,7 @@ public class Main {
     System.out.println("Phone number: " + client.getPhoneNumber());
     System.out.println("Email: " + client.getEmail());
     
-    Reservation.reservation = new Reservation();
+    Reservation reservation = new Reservation();
     reservation.EnterReservationDetails();
     
     System.out.println("\nClient reservation details  ");
