@@ -3,7 +3,7 @@
 /*Program: Computer Science           */
 import java.util.ArrayList;
 
-public class Stylist
+public class Main
 {
 	public static void main(String[] args) {
 		
@@ -20,33 +20,33 @@ public class Stylist
 		stylist.setHourlyRate(50.0);
 		
 		//list of reservation cannot be done because no reservation class
-    	/*ArrayList<Reservation> reservations = new ArrayList<>();
-        reservations.add(new Reservation("2024-06-01", "10:00 AM", "Haircut", "Sazzy"));
-        reservations.add(new Reservation("2024-06-02", "11:00 AM", "Coloring", "Sazzy"));
+    		/*ArrayList<Reservation> reservations = new ArrayList<>();
+      		reservations.add(new Reservation("2024-06-01", "10:00 AM", "Haircut", "Sazzy"));
+       		reservations.add(new Reservation("2024-06-02", "11:00 AM", "Coloring", "Sazzy"));
 
-        // Constructur with name, hourly rate and reservation
-        Stylist stylist = new Stylist("John", 50.0, reservations);
+        	// Constructur with name, hourly rate and reservation
+        	Stylist stylist = new Stylist("John", 50.0, reservations);
         
-        stylist.displayStylistInfo;*/
+        	stylist.displayStylistInfo;*/
 		
 	
-        /* To make sure same stylist and to add the reservation
-        Reservation reservation = new Reservation();
-        reservation.EnterReservationDetails();
-        Reservation reservation1 = new Reservation();
-        reservation1.EnterReservationDetails();
+        	/* To make sure same stylist and to add the reservation
+        	Reservation reservation = new Reservation();
+        	reservation.EnterReservationDetails();
+        	Reservation reservation1 = new Reservation();
+        	reservation1.EnterReservationDetails();
         
-        if (reservation.getHairStylistName().equals(stylist1.getName())) {
-            stylist1.addReservation(reservation);
-        } else if (reservation.getHairStylistName().equals(stylist2.getName())) {
-            stylist2.addReservation(reservation);
-        }
+        	if (reservation.getHairStylistName().equals(stylist1.getName())) {
+            		stylist1.addReservation(reservation);
+        	} else if (reservation.getHairStylistName().equals(stylist2.getName())) {
+            		stylist2.addReservation(reservation);
+        	}
 
-        if (reservation1.getHairStylistName().equals(stylist1.getName())) {
-            stylist1.addReservation(reservation1);
-        } else if (reservation1.getHairStylistName().equals(stylist2.getName())) {
-            stylist2.addReservation(reservation1);
-        }*/
+       		if (reservation1.getHairStylistName().equals(stylist1.getName())) {
+           		stylist1.addReservation(reservation1);
+        	} else if (reservation1.getHairStylistName().equals(stylist2.getName())) {
+            		stylist2.addReservation(reservation1);
+       		}*/
         
         
 		stylist1.displayStylistInfo();
