@@ -1,22 +1,92 @@
 /*Name   : Nurul Haniizati binti Hazli*/
 /*ID     : 24000182                   */
 /*Program: Computer Science           */
-
-import java.util.List; // library for list and array list
 import java.util.ArrayList;
+
+public class Main
+{
+	public static void main(String[] args) {
+		
+		Stylist stylist1 = new Stylist("Ally", 45.0);
+		Stylist stylist2 = new Stylist("Suzanne", 67.0);
+		
+		//Set data using setter method
+		Stylist stylist3 = new Stylist();
+		stylist3.setName("Mila");
+		stylist3.setHourlyRate(30.0);	
+	    
+	    // Constructur with only name
+		Stylist stylist = new Stylist("Zahir") ;
+		stylist.setHourlyRate(50.0);
+		
+		//list of reservation cannot be done because no reservation class
+    	/*ArrayList<Reservation> reservations = new ArrayList<>();
+        reservations.add(new Reservation("2024-06-01", "10:00 AM", "Haircut", "Sazzy"));
+        reservations.add(new Reservation("2024-06-02", "11:00 AM", "Coloring", "Sazzy"));
+
+        // Constructur with name, hourly rate and reservation
+        Stylist stylist = new Stylist("John", 50.0, reservations);
+        
+        stylist.displayStylistInfo;*/
+		
+	
+        /* To make sure same stylist and to add the reservation
+        Reservation reservation = new Reservation();
+        reservation.EnterReservationDetails();
+        Reservation reservation1 = new Reservation();
+        reservation1.EnterReservationDetails();
+        
+        if (reservation.getHairStylistName().equals(stylist1.getName())) {
+            stylist1.addReservation(reservation);
+        } else if (reservation.getHairStylistName().equals(stylist2.getName())) {
+            stylist2.addReservation(reservation);
+        }
+
+        if (reservation1.getHairStylistName().equals(stylist1.getName())) {
+            stylist1.addReservation(reservation1);
+        } else if (reservation1.getHairStylistName().equals(stylist2.getName())) {
+            stylist2.addReservation(reservation1);
+        }*/
+        
+        
+		stylist1.displayStylistInfo();
+		stylist2.displayStylistInfo();
+		stylist3.displayStylistInfo();
+		
+		stylist.displayStylistInfo();
+	    
+	}
+}
 
 public class Stylist {
     //declare variable stylist name, hourly rate and list of reservations
     private String stylistName;
     private double hourlyRate;
-    private List<Reservation> reservations;
+    private ArrayList<Reservation> reservations;
+    
+    //default Constructor
+    public Stylist() {
+        this.reservations = new ArrayList<>();
+    }
 
-    // Constructor 
+    // Constructor with only name
+    public Stylist(String stylistName) {
+        this.stylistName = stylistName;
+        this.reservations = new ArrayList<>();
+    }
+    // Constructor with name and hourly rate
     public Stylist(String stylistName, double hourlyRate) {
         // Initialize of stylist name, hourly rate dan array list of reservations
         this.stylistName = stylistName;
         this.hourlyRate = hourlyRate;
         this.reservations = new ArrayList<>();
+    }
+    
+    // Constructor with name, hourly rate, and reservations
+    public Stylist(String stylistName, double hourlyRate, ArrayList<Reservation> reservations) {
+        this.stylistName = stylistName;
+        this.hourlyRate = hourlyRate;
+        this.reservations = reservations;
     }
 
      // Method to get stylist name and to set stylist name
@@ -38,19 +108,25 @@ public class Stylist {
     }
 
     // Method to get list of reservationsn and to set list of reservations
-    public List<Reservation> getReservations() {
+    public ArrayList<Reservation> getReservations() {
         return reservations;
     }
 
-    public void setReservations(List<Reservation> reservations) {
+    public void setReservations(ArrayList<Reservation> reservations) {
         this.reservations = reservations;
+    }
+    
+    public void addReservation(Reservation reservation) {
+        this.reservations.add(reservation);
     }
     
     // To display the stylist detail
     public void displayStylistInfo() {
         System.out.println("\n********** Stylist Details **********");
         System.out.println("Stylist Name: " + stylistName);
-        System.out.println("Hourly Rate: RM" + hourlyRate);
+        System.out.println("Hourly Rate: RM " + hourlyRate);
         System.out.println("Number of Reservations: " + reservations.size());  
     }
+    
 }
+
