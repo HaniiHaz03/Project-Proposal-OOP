@@ -3,7 +3,7 @@
 /*Program: Computer Science           */
 import java.util.ArrayList;
 
-public class Main
+public class Stylist
 {
 	public static void main(String[] args) {
 		
