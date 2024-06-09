@@ -20,7 +20,7 @@ public class Main
 		stylist.setHourlyRate(50.0);
 		
 		//list of reservation cannot be done because no reservation class
-    		/*ArrayList<Reservation> reservations = new ArrayList<>();
+    		/*List<Reservation> reservations = new ArrayList<>();
       		reservations.add(new Reservation("2024-06-01", "10:00 AM", "Haircut", "Sazzy"));
        		reservations.add(new Reservation("2024-06-02", "11:00 AM", "Coloring", "Sazzy"));
 
@@ -62,7 +62,7 @@ public class Stylist {
     //declare variable stylist name, hourly rate and list of reservations
     private String stylistName;
     private double hourlyRate;
-    private ArrayList<Reservation> reservations;
+    private List<Reservation> reservations;
     
     //default Constructor
     public Stylist() {
@@ -76,14 +76,14 @@ public class Stylist {
     }
     // Constructor with name and hourly rate
     public Stylist(String stylistName, double hourlyRate) {
-        // Initialize of stylist name, hourly rate dan array list of reservations
+        // Initialize of stylist name, hourly rate dan  list of reservations
         this.stylistName = stylistName;
         this.hourlyRate = hourlyRate;
         this.reservations = new ArrayList<>();
     }
     
     // Constructor with name, hourly rate, and reservations
-    public Stylist(String stylistName, double hourlyRate, ArrayList<Reservation> reservations) {
+    public Stylist(String stylistName, double hourlyRate, List<Reservation> reservations) {
         this.stylistName = stylistName;
         this.hourlyRate = hourlyRate;
         this.reservations = reservations;
@@ -108,11 +108,11 @@ public class Stylist {
     }
 
     // Method to get list of reservationsn and to set list of reservations
-    public ArrayList<Reservation> getReservations() {
+    public List<Reservation> getReservations() {
         return reservations;
     }
 
-    public void setReservations(ArrayList<Reservation> reservations) {
+    public void setReservations(List<Reservation> reservations) {
         this.reservations = reservations;
     }
     
