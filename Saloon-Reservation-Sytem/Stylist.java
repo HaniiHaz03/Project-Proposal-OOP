@@ -61,10 +61,6 @@ public class Stylist {
         this.reservations = reservations;
     }
     
-    public void addReservation(Reservation reservation) {
-        this.reservations.add(reservation);
-    }
-    
     // To display the stylist detail
     public void displayStylistInfo() {
         System.out.println("\n********** Stylist Details **********");
