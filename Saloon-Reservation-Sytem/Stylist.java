@@ -7,7 +7,7 @@ public class Stylist {
     //declare variable stylist name, hourly rate and list of reservations
     private String stylistName;
     private double hourlyRate;
-    private List<Reservation> reservations;
+    private ArrayList<Reservation> reservations;
     
     //default Constructor
     public Stylist() {
@@ -28,7 +28,7 @@ public class Stylist {
     }
     
     // Constructor with name, hourly rate, and reservations
-    public Stylist(String stylistName, double hourlyRate, List<Reservation> reservations) {
+    public Stylist(String stylistName, double hourlyRate, ArrayList<Reservation> reservations) {
         this.stylistName = stylistName;
         this.hourlyRate = hourlyRate;
         this.reservations = reservations;
@@ -53,11 +53,11 @@ public class Stylist {
     }
 
     // Method to get list of reservationsn and to set list of reservations
-    public List<Reservation> getReservations() {
+    public ArrayList<Reservation> getReservations() {
         return reservations;
     }
 
-    public void setReservations(List<Reservation> reservations) {
+    public void setReservations(ArrayList<Reservation> reservations) {
         this.reservations = reservations;
     }
     
