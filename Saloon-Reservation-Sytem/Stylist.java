@@ -6,7 +6,7 @@ import java.util.*;
 public class Stylist {
     //declare variable stylist name, hourly rate and list of reservations
     private String stylistName;
-    private double hourlyRate;
+    private float hourlyRate;
     private ArrayList<Reservation> reservations;
     
     //default Constructor
@@ -20,7 +20,7 @@ public class Stylist {
         this.reservations = new ArrayList<>();
     }
     // Constructor with name and hourly rate
-    public Stylist(String stylistName, double hourlyRate) {
+    public Stylist(String stylistName, float hourlyRate) {
         // Initialize of stylist name, hourly rate dan  list of reservations
         this.stylistName = stylistName;
         this.hourlyRate = hourlyRate;
@@ -28,7 +28,7 @@ public class Stylist {
     }
     
     // Constructor with name, hourly rate, and reservations
-    public Stylist(String stylistName, double hourlyRate, ArrayList<Reservation> reservations) {
+    public Stylist(String stylistName, float hourlyRate, ArrayList<Reservation> reservations) {
         this.stylistName = stylistName;
         this.hourlyRate = hourlyRate;
         this.reservations = reservations;
@@ -44,11 +44,11 @@ public class Stylist {
     }
 
     // Method to get hourly rate and set hourly rate
-    public double getHourlyRate() {
+    public float getHourlyRate() {
         return hourlyRate;
     }
 
-    public void setHourlyRate(double hourlyRate) {
+    public void setHourlyRate(float hourlyRate) {
         this.hourlyRate = hourlyRate;
     }
 
