@@ -3,61 +3,6 @@
 /*Program: Computer Science           */
 import java.util.*;
 
-public class Main
-{
-	public static void main(String[] args) {
-		
-		Stylist stylist1 = new Stylist("Ally", 45.0);
-		Stylist stylist2 = new Stylist("Suzanne", 67.0);
-		
-		//Set data using setter method
-		Stylist stylist3 = new Stylist();
-		stylist3.setName("Mila");
-		stylist3.setHourlyRate(30.0);	
-	    
-	    // Constructur with only name
-		Stylist stylist = new Stylist("Zahir") ;
-		stylist.setHourlyRate(50.0);
-		
-		//list of reservation cannot be done because no reservation class
-    		/*List<Reservation> reservations = new ArrayList<>();
-      		reservations.add(new Reservation("2024-06-01", "10:00 AM", "Haircut", "Sazzy"));
-       		reservations.add(new Reservation("2024-06-02", "11:00 AM", "Coloring", "Sazzy"));
-
-        	// Constructur with name, hourly rate and reservation
-        	Stylist stylist = new Stylist("John", 50.0, reservations);
-        
-        	stylist.displayStylistInfo;*/
-		
-	
-        	/* To make sure same stylist and to add the reservation
-        	Reservation reservation = new Reservation();
-        	reservation.EnterReservationDetails();
-        	Reservation reservation1 = new Reservation();
-        	reservation1.EnterReservationDetails();
-        
-        	if (reservation.getHairStylistName().equals(stylist1.getName())) {
-            		stylist1.addReservation(reservation);
-        	} else if (reservation.getHairStylistName().equals(stylist2.getName())) {
-            		stylist2.addReservation(reservation);
-        	}
-
-       		if (reservation1.getHairStylistName().equals(stylist1.getName())) {
-           		stylist1.addReservation(reservation1);
-        	} else if (reservation1.getHairStylistName().equals(stylist2.getName())) {
-            		stylist2.addReservation(reservation1);
-       		}*/
-        
-        
-		stylist1.displayStylistInfo();
-		stylist2.displayStylistInfo();
-		stylist3.displayStylistInfo();
-		
-		stylist.displayStylistInfo();
-	    
-	}
-}
-
 public class Stylist {
     //declare variable stylist name, hourly rate and list of reservations
     private String stylistName;
