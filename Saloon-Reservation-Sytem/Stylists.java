@@ -2,56 +2,6 @@
 /* 22006373 */
 /* PROGRAM : COMPUTER SCIENCE */
 
-import java.util.Scanner;
-public class Main
-{
-	public static void main(String[] args) 
-	{
-        Scanner scanner = new Scanner(System.in);
-        Stylists lists = new Stylists();                // lists is the object
-        boolean run = true;
-
-        while (run) {                               // using loop to continuously prompt the user for actions
-            System.out.println("1. Add Stylist");
-            System.out.println("2. Remove Stylist");
-            System.out.println("3. Print Stylists");
-            System.out.println("4. Find Stylist");
-            System.out.println("5. Exit");
-            System.out.print("Enter your choice: ");
-            
-            int choice = scanner.nextInt();
-            scanner.nextLine();  // Consume newline
-
-            switch (choice) {
-                case 1:
-                    System.out.print("Enter stylist name to add: ");
-                    String addName = scanner.nextLine();            
-                    lists.addStylist(addName);                   // method to call the class with object
-                    break;
-                case 2:
-                    System.out.print("Enter stylist name to remove: ");
-                    String removeName = scanner.nextLine();         
-                    lists.removeStylist(removeName);             // method to call the class with object
-                    break;
-                case 3:
-                    lists.printStylist();                        // method to call the class with object
-                    break;
-                case 4:
-                    System.out.print("Enter stylist name to find: ");
-                    String findName = scanner.nextLine();
-                    lists.findStylist(findName);                 // method to call the class with object
-                    break;
-                case 5:
-                    run = false;
-                    break;
-                default:
-                    System.out.print("Invalid choice. Please try again.");
-            }
-        }
-
-        scanner.close();
-    }
-}
 import java.util.ArrayList;
 public class Stylists
 {
