@@ -1,3 +1,7 @@
+
+/*Name   : Nurul Haniizati binti Hazli*/
+/*ID     : 24000182                   */
+/*Program: Computer Science           */
 public class Stylist {
     private String name;
     private String rate;
