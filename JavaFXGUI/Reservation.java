@@ -48,6 +48,18 @@ public class Reservation {
     public String getEmail() {
         return email;
     }
+
+    @Override
+    public String toString() {
+        return "Reservation Details:\n" +
+               "Client Name: " + clientName + "\n" +
+               "Phone Number: " + phoneNum + "\n" +
+               "Email: " + email + "\n" +
+               "Date: " + date + "\n" +
+               "Time: " + time + "\n" +
+               "Service Type: " + serviceType + "\n" +
+               "Stylist Name: " + stylistName;
+    }
 }
 
 
