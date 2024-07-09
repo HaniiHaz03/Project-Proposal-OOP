@@ -8,7 +8,7 @@ import javafx.geometry.Insets;
 
 public class FrontEndReservation extends Application {
     private Reservations reservationsList = new Reservations();
-     // Create widgets
+    // Create widgets
     private TextField nameField = new TextField();
     private TextField phoneNumField = new TextField();
     private TextField emailField = new TextField();
@@ -26,12 +26,11 @@ public class FrontEndReservation extends Application {
         stylistNameChoiceBox.getItems().addAll("Barbara Pelvin", "Anna Hanna ", "Emma Stone", "Adam Rizq");
 
         // Create UI elements
-        // Create a grid pane and set its properties
         GridPane pane = new GridPane();
         pane.setPadding(new Insets(10, 10, 10, 10));
         pane.setVgap(10);
         pane.setHgap(10);
-        
+
         // Add widgets to the grid pane
         pane.add(new Label("Client Name:"), 0, 0);
         pane.add(nameField, 1, 0);
@@ -47,25 +46,38 @@ public class FrontEndReservation extends Application {
         pane.add(serviceTypeChoiceBox, 1, 5);
         pane.add(new Label("Stylist Name:"), 0, 6);
         pane.add(stylistNameChoiceBox, 1, 6);
-        
-        // Set an action for the button
-        Button submitButton = new Button("Submit");
-        submitButton.setOnAction(this::handleSubmitButtonClick);
+
+        // Add buttons and set their actions
+        Button addButton = new Button("Add");
+        addButton.setOnAction(this::handleAddButtonClick);
+
+        Button removeButton = new Button("Remove");
+        removeButton.setOnAction(this::handleRemoveButtonClick);
+
+        Button findButton = new Button("Find");
+        findButton.setOnAction(this::handleFindButtonClick);
+
+        Button printButton = new Button("Print All");
+        printButton.setOnAction(this::handlePrintButtonClick);
+
         Button cancelButton = new Button("Cancel");
         cancelButton.setOnAction(this::handleCancelButtonClick);
 
-        pane.add(submitButton, 0, 7);
-        pane.add(cancelButton, 1, 7);
-        pane.add(reservationDetailsLabel, 0, 8, 2, 1);
+        pane.add(addButton, 0, 7);
+        pane.add(removeButton, 1, 7);
+        pane.add(findButton, 0, 8);
+        pane.add(printButton, 1, 8);
+        pane.add(cancelButton, 0, 9, 2, 1);
+        pane.add(reservationDetailsLabel, 0, 10, 2, 1);
 
         // Setup the stage
-        Scene scene = new Scene(pane, 400, 350);
+        Scene scene = new Scene(pane, 400, 450);
         stage.setTitle("Client Reservation");
         stage.setScene(scene);
         stage.show();
     }
 
-    private void handleSubmitButtonClick(ActionEvent event) {
+    private void handleAddButtonClick(ActionEvent event) {
         String clientName = nameField.getText();
         String phoneNum = phoneNumField.getText();
         String email = emailField.getText();
@@ -80,6 +92,26 @@ public class FrontEndReservation extends Application {
 
         // Display the current reservation details
         displayReservationDetails(reservation);
+    }
+
+    private void handleRemoveButtonClick(ActionEvent event) {
+        String clientName = nameField.getText();
+        reservationsList.removeReservationByName(clientName);
+        reservationDetailsLabel.setText("Reservation for " + clientName + " removed.");
+    }
+
+    private void handleFindButtonClick(ActionEvent event) {
+        String clientName = nameField.getText();
+        Reservation reservation = reservationsList.findReservationByName(clientName);
+        if (reservation != null) {
+            displayReservationDetails(reservation);
+        } else {
+            reservationDetailsLabel.setText("No reservation found for " + clientName);
+        }
+    }
+
+    private void handlePrintButtonClick(ActionEvent event) {
+        reservationsList.printReservations();
     }
 
     private void handleCancelButtonClick(ActionEvent event) {
