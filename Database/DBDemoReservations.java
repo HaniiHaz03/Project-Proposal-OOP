@@ -1,6 +1,6 @@
 public class DBDemo
 {
-    // instance variables - replace the example below with your own
+    
    
     public DBDemo()
     {
