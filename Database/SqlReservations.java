@@ -1,76 +1,70 @@
+
 import java.sql.*;
 
-class SqlDB {
-   private Connection conn = null;
-   private String url, user, password;
-   private Statement stmt; 
-   
-   public SqlDB(String url, String user, String password) {
-       this.url=url;
-       this.user=user;
-       this.password=password;
-   }
-   
-   public void init(){
-       try {
-            Class.forName("com.mysql.jdbc.Driver").newInstance();
+class SqlDB{
+    private Connection conn = null;
+    private String url, user, password;
+    private Statement stmt; 
+    
+    public SqlDB(String url, String user, String password){
+        this.url = url;
+        this.user = user;
+        this.password = password;
+    }
+    
+    public void init(){
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
             
             // connect way #1
-            String url = "jdbc:mysql://" + this.url + ":3306/" + this.user;
+            String url = "jdbc:mysql://"+this.url +":3306/"+ this.user;
             String user = this.user;
             String password = this.password;
  
             conn = DriverManager.getConnection(url, user, password);
             if (conn != null) {
-                System.out.println("Connected to the database test1");
+                System.out.println("Connected to the database");
             }
-            
             stmt = conn.createStatement();
- 
-        } catch (SQLException ex) {//catches only SQL exception
+        }
+        catch (SQLException ex) {
             System.out.println("An error occurred. Maybe user/password is invalid");
             ex.printStackTrace();
-            System.out.println(ex);
-        } catch (Exception ex) { //catch some other kind of error, especially connector loading
+        } catch (Exception ex) {
             System.out.println("Some sort of error, probably driver loading..");
             ex.printStackTrace();
         }
-
     }
     
-    public void insert(String date, String time, String serviceType, String stylistName, String clientName, String phoneNum, String email){
+    public void insert(String ClientName, String PhoneNum, String email, String date, String time, String ServiceType, String stylist){
         try{
-        stmt.executeUpdate ( "INSERT INTO Reservation " + 
-                            "VALUES ('"+date+"', '"+time+"', '"+serviceType+"','"+stylistName+"','"+clientName+"','"+phoneNum+"','"+email+"')"); 
-        }catch (SQLException ex) {//catches only SQL exception
-            System.out.println("An error occurred. Maybe user/password is invalid");
-            ex.printStackTrace();
-            System.out.println(ex);
+            stmt.executeUpdate("INSERT INTO Stylist (StylistName, HourlyPrice, ListOfReservations) " + 
+                               "VALUES ('" + ClientName + "', '" + PhoneNum + "', '" + email + "', '" + date + "', '" + time + "', '" + ServiceType + "', '" + stylist + "')"); 
         }
-
+        catch (SQLException ex) {
+            System.out.println("An error occurred while inserting data");
+            ex.printStackTrace();
+        }
     }
     
     public void query(){
         try{
-            //a table containing the results
-            ResultSet rs = stmt.executeQuery ("SELECT date, time, serviceType, stylistName, clientName, phoneNum, email FROM Reservation"); 
-            while (rs.next()) { // process one row  after another
-                String date = rs.getString ("date");
-                String time = rs.getString ("time");
-                String service = rs.getString ("serviceType");
-                String stylist = rs.getString ("stylistName");
-                String client = rs.getString ("clientName");
-                String phone = rs.getString ("phoneNum");
-                String email = rs.getString ("email");
-                System.out.println ("Retrieved " + date + " " + time + " " + service + " " + stylist + " " + stylist+ " " + client + " " + phone + " " + email + " " ); 
-                    } 
-        }catch (SQLException ex) {//catches only SQL exception
-            System.out.println("An error occurred. Maybe user/password is invalid");
-            ex.printStackTrace();
-            System.out.println(ex);
+            // a table containing the results
+            ResultSet rs = stmt.executeQuery("SELECT `Client Name`, `Phone Number`, `Email`, `Date` , `Time`, `Service Type`, `Stylist`FROM Reservation"); 
+            while (rs.next()) { // process one row after another
+                String c = rs.getString("Client Name"); 
+                String p = rs.getString ("Phone Number");
+                String e = rs.getString("Email");
+                String d = rs.getString("Date");
+                String t = rs.getString("Time");
+                String st = rs.getString("Service Type");
+                String s = rs.getString("Stylist");
+                System.out.println("Retrieved " + c + " " + p + " " + e+ " " + d+ " " + t+ " " + st+ " " + s); 
+            } 
         }
-
-
+        catch (SQLException ex) {
+            System.out.println("An error occurred while querying data");
+            ex.printStackTrace();
+        }
     }
-       
-   }
+}
