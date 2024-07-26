@@ -2,12 +2,7 @@
 //ID: 24000918
 //PROGRAM: BACHELOR OF COMPUTER SCIENCE
 import java.util.*;
-/**
- * Write a description of class Clients here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
+
 public class Clients
 {
     private ArrayList<Client> clients = new ArrayList<>();
