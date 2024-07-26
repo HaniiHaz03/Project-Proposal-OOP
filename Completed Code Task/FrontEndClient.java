@@ -1,3 +1,6 @@
+//Name: Sara Eudora Binti Said
+//ID: 24000574
+//Program: Computer Science
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
